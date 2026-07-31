@@ -1,0 +1,47 @@
+# Lunar Ice Detection Pipeline Configuration
+# Copy this file and modify as needed
+
+# Data directories
+data_dir: ./data
+output_dir: ./output
+
+# Dataset files (band_name: filename)
+dataset_files:
+  elevation: lola_elevation.tif
+  slope: lola_slope.tif
+  roughness: lola_roughness.tif
+  temp_max: diviner_temp_max.tif
+  temp_min: diviner_temp_min.tif
+  neutron_suppression: lend_neutron_suppression.tif
+  radar_cpr: minirf_cpr.tif
+
+# NoData values
+nodata_values:
+  elevation: -9999.0
+  slope: -9999.0
+  roughness: -9999.0
+  temp_max: 0.0
+  temp_min: 0.0
+  neutron_suppression: -1.0
+  radar_cpr: -1.0
+
+# Model configuration
+patch_size: 64
+patch_stride: 32
+latent_dim: 128
+
+# Training configuration
+batch_size: 32
+num_epochs: 100
+learning_rate: 0.0001
+kl_weight: 0.1
+
+# Physics configuration
+temp_threshold: 110.0  # Kelvin
+
+# Inference options
+use_uncertainty: false
+mc_samples: 10
+
+# Output configuration
+output_prefix: lunar_ice

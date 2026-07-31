@@ -1,0 +1,28 @@
+# Lunar Ice Detection Pipeline Dependencies
+# Python 3.9+
+
+# Core scientific computing
+numpy>=1.21.0
+scipy>=1.7.0
+
+# Geospatial data processing
+rasterio>=1.2.0
+affine>=3.3.0
+
+# Deep learning framework
+torch>=1.10.0
+
+# Optional: For better progress bars and logging
+tqdm>=4.62.0
+
+# Optional: For visualization
+matplotlib>=3.5.0
+
+# Optional: For interactive visualization
+streamlit>=1.24.0
+
+# Testing
+pytest>=7.0.0
+
+# Configuration
+PyYAML>=6.0
