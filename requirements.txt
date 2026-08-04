@@ -7,7 +7,7 @@ scipy>=1.7.0
 
 # Geospatial data processing
 rasterio>=1.2.0
-affine>=3.3.0
+affine>=2.3.0
 
 # Deep learning framework
 torch>=1.10.0

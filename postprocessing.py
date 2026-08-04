@@ -281,7 +281,7 @@ HTML_TEMPLATE = """<!doctype html>
   <div class="card"><div class="label">P(ice) max</div>
        <div class="value">{probability_max:.4f}</div></div>
   <div class="card"><div class="label">Fraction &ge; {threshold:.2f}</div>
-       <div class="value">{fraction_high_confidence*100:.2f}%</div></div>
+       <div class="value">{pct_high_confidence:.2f}%</div></div>
 </div>
 
 <h2>Indicator breakdown</h2>
@@ -337,7 +337,7 @@ def write_html_report(summary: DetectionSummary, output_path: Path) -> Path:
         valid_pixels=summary.valid_pixels,
         probability_mean=summary.probability_mean,
         probability_max=summary.probability_max,
-        fraction_high_confidence=summary.fraction_high_confidence,
+        pct_high_confidence=summary.fraction_high_confidence * 100,
         threshold=summary.threshold_used,
         indicator_rows=indicator_rows,
         output_file_rows=of_rows,

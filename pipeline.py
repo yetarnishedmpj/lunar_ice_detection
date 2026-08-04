@@ -149,7 +149,11 @@ class LunarIceDetectionPipeline:
             device: Device for model training/inference
         """
         self.config = config
-        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        target_device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        if target_device == "cuda" and not torch.cuda.is_available():
+            logger.warning("CUDA requested or specified, but CUDA is not available. Falling back to CPU.")
+            target_device = "cpu"
+        self.device = target_device
 
         # Initialize components
         self.data_ingestion: Optional[LunarDataIngestion] = None
@@ -222,6 +226,9 @@ class LunarIceDetectionPipeline:
             self.feature_tensor,
             band_names
         )
+
+        # Replace any remaining NaNs with 0.0 (normalized mean) for neural network input
+        self.feature_tensor = np.nan_to_num(self.feature_tensor, nan=0.0)
 
         logger.info(f"Data loaded: shape={self.feature_tensor.shape}")
 

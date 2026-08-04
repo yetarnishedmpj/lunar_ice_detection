@@ -5,6 +5,7 @@ Handles loading and preprocessing of multi-source lunar remote sensing data
 
 import numpy as np
 import numpy.typing as npt
+import rasterio
 from rasterio.windows import Window
 from rasterio.io import DatasetReader
 from pathlib import Path
@@ -137,7 +138,7 @@ class LunarDataIngestion:
             if not config.exists:
                 raise FileNotFoundError(f"Dataset not found: {config.path}")
 
-            self._datasets[band_name] = DatasetReader(config.path)
+            self._datasets[band_name] = rasterio.open(config.path)
             logger.debug(f"Opened dataset: {band_name}")
 
         return self._datasets[band_name]

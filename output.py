@@ -45,7 +45,13 @@ class GeoTIFFExporter:
         self.reference_dataset = reference_dataset
         self.output_crs = output_crs
         self._transform = reference_dataset.transform
-        self._crs = CRS.from_string(output_crs) if isinstance(output_crs, str) else output_crs
+        try:
+            self._crs = CRS.from_string(output_crs) if isinstance(output_crs, str) else output_crs
+        except Exception:
+            if hasattr(reference_dataset, 'crs') and reference_dataset.crs:
+                self._crs = reference_dataset.crs
+            else:
+                self._crs = CRS.from_epsg(4326)
 
     @classmethod
     def from_paths(

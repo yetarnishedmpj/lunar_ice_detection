@@ -1,0 +1,86 @@
+{
+  "device": "cpu",
+  "fraction_high_confidence": 0.0,
+  "generated_at_utc": "2026-08-04T03:04:24+00:00",
+  "indicator_stats": {
+    "ice_probability_smoothed": {
+      "fraction_above_threshold": 0.0,
+      "max": 0.37363266944885254,
+      "mean": 0.04170607775449753,
+      "median": 0.038371048867702484,
+      "min": 7.266431566677056e-06,
+      "std": 0.024392912164330482,
+      "valid_pixels": 65536
+    },
+    "neutron_indicator": {
+      "fraction_above_threshold": 0.358673095703125,
+      "max": 0.899941623210907,
+      "mean": 0.36611443758010864,
+      "median": 0.34872347116470337,
+      "min": 0.0,
+      "std": 0.29014265537261963,
+      "valid_pixels": 65536
+    },
+    "physics_combined": {
+      "fraction_above_threshold": 0.1911773681640625,
+      "max": 0.8786004781723022,
+      "mean": 0.37510958313941956,
+      "median": 0.3663010001182556,
+      "min": 0.050009340047836304,
+      "std": 0.13714540004730225,
+      "valid_pixels": 65536
+    },
+    "radar_indicator": {
+      "fraction_above_threshold": 0.8943939208984375,
+      "max": 1.0,
+      "mean": 0.8874247074127197,
+      "median": 1.0,
+      "min": 0.20001423358917236,
+      "std": 0.21777595579624176,
+      "valid_pixels": 65536
+    },
+    "reconstruction_error": {
+      "fraction_above_threshold": 0.6700897216796875,
+      "max": 1.506616473197937,
+      "mean": 0.6008698344230652,
+      "median": 0.5919240713119507,
+      "min": 0.011976725421845913,
+      "std": 0.20719695091247559,
+      "valid_pixels": 65536
+    },
+    "reconstruction_normalized": {
+      "fraction_above_threshold": 0.023773193359375,
+      "max": 1.0,
+      "mean": 0.025695959106087685,
+      "median": 0.0,
+      "min": 0.0,
+      "std": 0.13593992590904236,
+      "valid_pixels": 65536
+    },
+    "temperature_indicator": {
+      "fraction_above_threshold": 0.07623291015625,
+      "max": 0.789941132068634,
+      "mean": 0.06278342753648758,
+      "median": 0.0,
+      "min": 0.0,
+      "std": 0.1850452721118927,
+      "valid_pixels": 65536
+    }
+  },
+  "output_files": {
+    "ice_probability": "output\\lunar_ice.tif",
+    "neutron_indicator": "output\\neutron_indicator.tif",
+    "physics_combined": "output\\physics_combined.tif",
+    "radar_indicator": "output\\radar_indicator.tif",
+    "reconstruction_error": "output\\reconstruction_error.tif",
+    "temp_indicator": "output\\temp_indicator.tif"
+  },
+  "probability_max": 0.37363266944885254,
+  "probability_mean": 0.04170607775449753,
+  "probability_median": 0.038371048867702484,
+  "probability_min": 7.266431566677056e-06,
+  "probability_std": 0.024392912164330482,
+  "smoothing_sigma_pixels": 1.5,
+  "threshold_used": 0.5,
+  "valid_pixels": 65536
+}

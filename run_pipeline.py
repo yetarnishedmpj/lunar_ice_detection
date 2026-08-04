@@ -25,6 +25,7 @@ import sys
 import json
 from pathlib import Path
 from typing import Optional, Dict, Any
+import numpy as np
 import yaml
 
 # Configure logging
@@ -128,8 +129,8 @@ def parse_args():
     parser.add_argument(
         '--device',
         type=str,
-        default='cuda',
-        help='Device for training (cuda or cpu)'
+        default=None,
+        help='Device for training (cuda, cpu, or auto)'
     )
 
     # Physics
